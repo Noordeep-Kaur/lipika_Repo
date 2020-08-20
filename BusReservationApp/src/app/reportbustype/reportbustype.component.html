@@ -1,0 +1,26 @@
+<div id="box">
+<div class="wrapper">
+    <button class="btn btn-success" (click)="fetchBusType()">Preferred Bus Type</button>
+</div>
+<div id="container1" class="p-3 mb-2 bg-warning text-white">
+    <h3>Analysis of Most Preferred Bus Type</h3>
+</div>
+<div id="container2" class="p-3 mb-2 bg-primary text-white">
+    <div class="tableContainer">
+        <table class="table">
+            <tbody>
+                <tr *ngIf="result">
+                    <th>Bus Number</th>
+                    <th>Bus Type</th>
+                    <th>Bus Preferrence Count</th>
+                </tr>
+                <tr *ngFor = "let b of result">
+                    <td>{{b.BusNumber}}</td>
+                    <td>{{b.BusType}}</td>
+                    <td>{{b.buscount}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

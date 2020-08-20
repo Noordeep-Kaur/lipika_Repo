@@ -1,0 +1,37 @@
+<div id="container1" class="p-3 mb-2 bg-warning text-white">
+    <h3>Trip</h3>
+</div>
+<div id="container2" class="p-3 mb-2 bg-primary text-white">
+    <div class="formContainer">
+    <form [formGroup]="myTripForm">
+        <div>
+        <label >Bus ID </label> 
+        <input id= "bus" type="number" class="form-control" [(ngModel)]="trip.busID" formControlName="busid">
+        <p *ngIf="busid.touched && busid.invalid">
+            <span class="alert alert-danger" *ngIf="busid.errors.required">Bus ID is required!</span>
+            <span class="alert alert-danger" *ngIf="busid.errors.minlength">Minimum length error</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>From Location </label> 
+        <input id="fl" type="text" class="form-control" [(ngModel)]="trip.fromLocation" formControlName="fromlocation">
+        <p *ngIf="fromlocation.touched && fromlocation.invalid">
+            <span class="alert alert-danger" *ngIf="fromlocation.errors.required">From Location is required!</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>To Location </label> 
+        <input id="tl" type="text" class="form-control" [(ngModel)]="trip.toLocation" formControlName="tolocation">
+        <p *ngIf="tolocation.touched && tolocation.invalid">
+            <span class="alert alert-danger" *ngIf="tolocation.errors.required">To Location is required!</span>
+        </p>
+        </div>
+        <br/>
+        <br/>
+        <button id="submit" onclick= "document.getElementById('bus').value = '',document.getElementById('fl').value = '',
+        document.getElementById('tl').value = ''" (click)="Register()" class="btn btn-success">Register Trip</button>
+        <button id="cancel" type="button" routerLink="/home" class="btn btn-danger">Cancel</button> 
+    </form>
+</div>

@@ -1,0 +1,53 @@
+<div id="box">
+<div class="wrapper">
+    <button class="btn btn-success" (click)="fetchProfit()">Profit Analysis</button>
+</div>
+<div id="container1" class="p-3 mb-2 bg-warning text-white">
+    <h3>Welcome to the Profit Analysis Report</h3>
+</div>
+<div id="container2" class="p-3 mb-2 bg-primary text-white">
+    <div class="tableContainer">
+        <div>
+            <h3>Taking Care of Every Journey</h3>
+            <br>
+            <br>
+            <p>We run fully owned commercial bus businesses through our eight
+                bus operations in the India. Our 8,550 people and 3,055 buses provide
+                excellent services for our customers in towns and cities in every part of 
+                the country, mostly in vibrant cities like <b>Delhi, Bangalore and Chandigarh,
+                Mumbai, Jaipur, Ahemdabad etc.</b>
+                <b>Ready Go Bus</b> customers are the most satisfied in India; recently
+                achieving our highest customer satisfaction score of <b>92%</b>. One of our
+                key strengths in this market is our devolved operating model through
+                which our experienced management teams deliver customer focused
+                strategies in their local areas. We are proud of the role we play in improving
+                the health and wellbeing of our communities through reducing carbon
+                emissions with cleaner buses and taking cars off the road.</p>
+        </div>
+        <br>
+        <br>
+        <div>
+            <p>
+                For the cuurent Month Profit Analysis Report is mentioned below:
+                <br/>
+                <br/>
+                <b>Operational Charges</b> on per day ticket bookings is <b>Rs. 800.8</b>
+                <br/>
+            </p>
+        </div>
+        <table class="table">
+            <tbody>
+                <tr *ngIf="result">
+                    <th>Gross Profit</th>
+                    <th>Profit Percentage</th>
+                </tr>
+                <tr *ngFor = "let p of result">
+                    <td>{{p.Profit}}</td>
+                    <td>{{p.ProfitPercentage}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+

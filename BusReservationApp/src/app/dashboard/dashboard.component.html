@@ -1,0 +1,23 @@
+<div id="head" class="p-3 mb-2 bg-success text-white">
+    <h3>Admin Dashboard</h3>
+    <button id="login" class="btn btn-primary" (click)="Login()">Admin Login</button>
+</div>
+<div class="verical-menu">
+    <nav class="navbar navbar-dark bg-dark">
+    <div class="btn-group-vertical" role="group">
+        <button class="btn btn-primary" (click)="addBus()" >Add Bus</button>
+        <br>
+        <button class="btn btn-primary" routerLink="/updatebus">Update Bus</button>
+        <br>
+        <button class="btn btn-primary" routerLink="/driveradd">Add Driver</button>
+        <br>
+        <button class="btn btn-primary" routerLink="/addtrip">Add Trip</button>
+        <br>
+        <button class="btn btn-primary" routerLink="/addroute">Add Route</button>
+    </div>
+    </nav>
+    <router-outlet></router-outlet>
+</div>
+<!-- <-- routerLink="/addbus" -->
+
+

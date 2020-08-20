@@ -1,0 +1,43 @@
+#container1{
+    width: 80%;
+    height: 70px;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+}
+#container2{
+    width: 80%;
+    height: 900px;
+    color: black;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+#box{
+    margin: auto;
+    height: 70px;
+}
+#showcontainer{
+    width: 80%;
+    color: black;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+#edit{
+    margin-left: 300px;
+    position: relative;
+    margin-right: 900px;
+    margin-top: 100px ;
+    
+}
+#cancel{
+    position: relative;
+
+}
+#box{
+    position: absolute;
+    left: 260px;
+}

@@ -1,0 +1,25 @@
+#container1{
+    width: 600px;
+    height: 70px;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+}
+#container2{
+    width: 600px;
+    height: 870px;
+    color: black;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 20px;
+    position: absolute;
+}
+#box{
+    margin: auto;
+    height: 70px;
+}
+#submit{
+    margin-left: 170px;
+    position: relative;
+    margin-right: 20px;
+}

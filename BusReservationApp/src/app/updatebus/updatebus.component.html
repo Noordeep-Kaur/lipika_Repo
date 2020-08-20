@@ -1,0 +1,116 @@
+<div id="box">
+<button class="btn btn-primary" (click)="fetchBuses()" style="Position:absolute; left:1000px; top:20px;">Show Buses</button>
+<div id="container1" class="p-3 mb-2 bg-warning text-white">
+    <h3>Buses</h3>
+</div>
+<div id="showcontainer" class="p-3 mb-2 bg-primary text-white">
+    <div class="tableContainer">
+        <table class="table">
+            <tbody>
+                <tr *ngIf="displaybus">
+                    <th>Bus ID</th>
+                    <th>Bus Number</th>
+                    <th>Driver ID</th>
+                    <th>Driver Phone Number</th>
+                    <th>Bus Type</th>
+                    <th>Number of Seats</th>
+                    <th>Bus Availability</th>
+                </tr>
+                <tr *ngFor = "let b of displaybus">
+                    <td>{{b.BusID}}</td>
+                    <td>{{b.BusNumber}}</td>
+                    <td>{{b.DriverID}}</td>
+                    <td>{{b.DriverPhone}}</td>
+                    <td>{{b.BusType}}</td>
+                    <td>{{b.NumberOfSeats}}</td>
+                    <td>{{b.BusAvailability}}</td>
+                    <td><button class="btn btn-dark" data-toggle="modal" data-target="#modalcontainer">Update Bus</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- <div class="modal" id="modalcontainer">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"> -->
+    <div id="container1" class="p-3 mb-2 bg-warning text-white">
+        <h3>Update Bus Details</h3>
+    </div>
+      <div id="container2" class="p-3 mb-2 bg-primary text-white">
+        <div id="formContainer">
+        <form [formGroup]="myBusForm" (ngSubmit)="editBus()" #updateForm="ngForm">
+            <div>
+            <label >Bus ID </label> 
+            <input type="number" class="form-control" name="busID" [(ngModel)]="model.BusID" formControlName="busid">
+            <p *ngIf="busid.touched && busid.invalid">
+                <span class="alert alert-danger" *ngIf="busid.errors.required">Bus ID is required!</span>
+            </p>
+            </div>
+            <br/>
+            <div>
+            <label >Bus Number </label> 
+            <input type="text" class="form-control"  name="busNumber" [(ngModel)]="model.BusNumber" formControlName="busnumber">
+            <p *ngIf="busnumber.touched && busnumber.invalid">
+                <span class="alert alert-danger" *ngIf="busnumber.errors.required">Bus Number is required!</span>
+            </p>
+            </div>
+            <br/>
+            <div>
+            <label>Driver ID </label> 
+            <input type="number" class="form-control"  name="driverID" [(ngModel)]="model.DriverID" formControlName="driverid">
+            <p *ngIf="driverid.touched && driverid.invalid">
+                <span class="alert alert-danger" *ngIf="driverid.errors.required">Driver Id is required!</span>
+            </p>
+            </div>
+            <br/>
+            <div>
+                <label>Driver Phone Number </label> 
+                <input type="text" class="form-control"  name="driverPhone" [(ngModel)]="model.DriverPhone" formControlName="driverphone">
+                <p *ngIf="driverphone.touched && driverphone.invalid">
+                    <span class="alert alert-danger" *ngIf="driverphone.errors.required">Driver Phone Number is required!</span>
+                </p>
+            </div>
+            <br/>
+            <div>
+                <label>Bus Type </label> 
+                <input type="text" class="form-control"  name="busType" [(ngModel)]="model.BusType" formControlName="bustype">
+                <p *ngIf="bustype.touched && bustype.invalid">
+                    <span class="alert alert-danger" *ngIf="bustype.errors.required">Bus Type field is required!</span>
+                </p>
+            </div>
+            <br/>
+            <div>
+                <label>Numbe Of Seats </label> 
+                <input type="number" class="form-control"  name="numberOfSeats" [(ngModel)]="model.NumberOfSeats" formControlName="noofseats">
+                <p *ngIf="noofseats.touched && noofseats.invalid">
+                    <span class="alert alert-danger" *ngIf="noofseats.errors.required">Number of Seats field is required!</span>
+                </p>
+            </div>
+            <br/>
+            <div>
+                <label>Bus Availability </label> 
+                <input type="number" class="form-control"  name="busAvailability" [(ngModel)]="model.BusAvailability" formControlName="busavailability">
+                <p *ngIf="busavailability.touched && busavailability.invalid">
+                    <span class="alert alert-danger" *ngIf="busavailability.errors.required">Bus Availability field is required!</span>
+                </p>
+            </div>
+            <br/>
+            <button id="edit" type="submit" class="btn btn-success">Update</button>
+            <button id="cancel" type="button" routerLink="/home" class="btn btn-danger">Cancel</button> 
+        </form>
+        </div>
+    </div>
+</div>
+<!-- </div>
+</div>
+</div> -->
+
+<!-- <script>
+    var modal = document.getElementById('container2');
+
+    window.onclick = function(event){
+        if(event.target == modal){
+            modal.style.display = "none";
+        }
+    }
+</script> -->

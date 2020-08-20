@@ -1,0 +1,38 @@
+<div id="container1" class="p-3 mb-2 bg-warning text-white">
+    <h3>Driver</h3>
+</div>
+<div id="container2" class="p-3 mb-2 bg-primary text-white">
+    <div class="formContainer">
+    <form [formGroup]="myDriverForm">
+        <div>
+        <label >First Name </label> 
+        <input id= "fn" type="text" class="form-control" [(ngModel)]="driver.firstName" formControlName="firstname">
+        <p *ngIf="firstname.touched && firstname.invalid">
+            <span class="alert alert-danger" *ngIf="firstname.errors.required">Admin ID is required!</span>
+            <span class="alert alert-danger" *ngIf="firstname.errors.minlength">Minimum length error</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>Last Name </label> 
+        <input id="ln" type="text" class="form-control" [(ngModel)]="driver.lastName" formControlName="lastname">
+        <p *ngIf="lastname.touched && lastname.invalid">
+            <span class="alert alert-danger" *ngIf="lastname.errors.required">Driver Id is required!</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>Phone Number </label> 
+        <input id="pn" type="text" class="form-control" [(ngModel)]="driver.phoneNumber" formControlName="phonenumber">
+        <p *ngIf="phonenumber.touched && phonenumber.invalid">
+            <span class="alert alert-danger" *ngIf="phonenumber.errors.required">Driver Phone Number is required!</span>
+        </p>
+        </div>
+        <br/>
+        <br/>
+        <button id="submit" onclick= "document.getElementById('fn').value = '',document.getElementById('ln').value = '',
+        document.getElementById('pn').value = ''" (click)="Register()" class="btn btn-success">Register Driver</button>
+        <button id="cancel" type="button" routerLink="/home" class="btn btn-danger">Cancel</button>
+    </form>
+</div>
+

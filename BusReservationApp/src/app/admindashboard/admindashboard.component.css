@@ -1,0 +1,70 @@
+header{
+    height: 90px;
+
+}
+
+#head{
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    border-style: solid;
+}
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Style the header */
+  header {
+    background-color: midnightblue;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+  }
+  
+  /* Create two columns/boxes that floats next to each other */
+  nav {
+    float: left;
+    width: 20%;
+    height: 660px; /* only for demonstration, should be removed */
+    background: #ccc;
+    padding-left: 50px;
+    position: fixed;
+  }
+
+  button{
+      padding-right: 20px;
+      padding-left: 20px;
+
+  }
+  #login{
+    position: absolute;
+    float: right;
+    top: 30px;
+    right: 30px;
+
+  }
+
+  .logoImage{
+    float: left;
+    border: solid;      
+    border-color: darkblue;
+    border-width: thick;
+    width: 150px;
+    height: 80px;
+    position: absolute;
+    top: 5px;
+    left: 40px;
+
+  }
+  
+  /* Clear floats after the columns */
+  /* section:after {
+    content: "";
+    display: table;
+    clear: both;
+  } */

@@ -1,0 +1,27 @@
+<div id="box">
+<div class="wrapper">
+<button class="btn btn-success" (click)="fetchRoutes()">Preferred Routes</button>
+</div>
+<div id="container1" class="p-3 mb-2 bg-warning text-white">
+    <h3>Analysis of Most Preferred Route</h3>
+</div>
+<div id="container2" class="p-3 mb-2 bg-primary text-white">
+    <div class="tableContainer">
+        <table class="table">
+            <tbody>
+                <tr *ngIf="result">
+                    <th>From Location</th>
+                    <th>To Location</th>
+                    <th>Prefrence Count</th>
+
+                </tr>
+                <tr *ngFor = "let r of result">
+                    <td>{{r.FromLocation}}</td>
+                    <td>{{r.ToLocation}}</td>
+                    <td>{{r.routeCount}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

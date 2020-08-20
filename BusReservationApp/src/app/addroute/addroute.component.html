@@ -1,0 +1,107 @@
+<div id="container1" class="p-3 mb-2 bg-warning text-white">
+    <h3>Route</h3>
+</div>
+<div id="container2" class="p-3 mb-2 bg-primary text-white">
+    <div class="formContainer">
+    <form [formGroup]="myRouteForm">
+        <div>
+        <label >Trip ID </label> 
+        <input id= "trip" type="number" class="form-control" [(ngModel)]="route.tripID" formControlName="tripid">
+        <p *ngIf="tripid.touched && tripid.invalid">
+            <span class="alert alert-danger" *ngIf="tripid.errors.required">Trip ID is required!</span>
+            <span class="alert alert-danger" *ngIf="tripid.errors.minlength">Minimum length error</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>From Location </label> 
+        <input id="fl" type="text" class="form-control" [(ngModel)]="route.fromLocation" formControlName="fromlocation">
+        <p *ngIf="fromlocation.touched && fromlocation.invalid">
+            <span class="alert alert-danger" *ngIf="fromlocation.errors.required">From Location is required!</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>To Location </label> 
+        <input id="tl" type="text" class="form-control" [(ngModel)]="route.toLocation" formControlName="tolocation">
+        <p *ngIf="tolocation.touched && tolocation.invalid">
+            <span class="alert alert-danger" *ngIf="tolocation.errors.required">To Location is required!</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>From Date </label> 
+        <input id="fdate" type="date" class="form-control" [(ngModel)]="route.fromDate" formControlName="fromdate">
+        <p *ngIf="fromdate.touched && fromdate.invalid">
+            <span class="alert alert-danger" *ngIf="fromdate.errors.required">From Date is required!</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>To Date </label> 
+        <input id="tdate" type="date" class="form-control" [(ngModel)]="route.toDate" formControlName="todate">
+        <p *ngIf="todate.touched && todate.invalid">
+            <span class="alert alert-danger" *ngIf="todate.errors.required">To Date is required!</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>From Time </label> 
+        <input id="ftime" type="text" class="form-control" [(ngModel)]="route.fromTime" formControlName="fromtime">
+        <p *ngIf="fromtime.touched && fromtime.invalid">
+            <span class="alert alert-danger" *ngIf="fromtime.errors.required">From Time is required!</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>To Time </label> 
+        <input id="ttime" type="text" class="form-control" [(ngModel)]="route.toTime" formControlName="totime">
+        <p *ngIf="totime.touched && totime.invalid">
+            <span class="alert alert-danger" *ngIf="totime.errors.required">To Time is required!</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>From Location Description </label> 
+        <input id="fdesc" type="text" class="form-control" [(ngModel)]="route.fromDescription" formControlName="fromdescription">
+        <p *ngIf="fromdescription.touched && fromdescription.invalid">
+            <span class="alert alert-danger" *ngIf="fromdescription.errors.required">From Location Description is required!</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>To Location Description </label> 
+        <input id="tdesc" type="text" class="form-control" [(ngModel)]="route.toDescription" formControlName="todescription">
+        <p *ngIf="todescription.touched && todescription.invalid">
+            <span class="alert alert-danger" *ngIf="todescription.errors.required">To Location Description is required!</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>Journey Fare </label> 
+        <input id="fare" type="text" class="form-control" [(ngModel)]="route.fare" formControlName="fare">
+        <p *ngIf="fare.touched && fare.invalid">
+            <span class="alert alert-danger" *ngIf="fare.errors.required">Journey Fare is required!</span>
+        </p>
+        </div>
+        <br/>
+        <br/>
+        <div>
+        <label>Number Of Seats </label> 
+        <input id="seats" type="text" class="form-control" [(ngModel)]="route.numberOfSeats" formControlName="noofseats">
+        <p *ngIf="noofseats.touched && noofseats.invalid">
+            <span class="alert alert-danger" *ngIf="noofseats.errors.required">Number Of Seats is required!</span>
+        </p>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <button id="submit" onclick= "document.getElementById('trip').value = '',document.getElementById('fl').value = '',
+        document.getElementById('tl').value = '', document.getElementById('fdate').value = '', 
+        document.getElementById('tdate').value = '', document.getElementById('ftime').value = '',
+        document.getElementById('ttime').value = '', document.getElementById('fdesc').value = '', document.getElementById('tdesc').value = '',
+        document.getElementById('fare').value = '', document.getElementById('seats').value = ''" 
+        (click)="Register()" class="btn btn-success">Register Route</button> 
+        <button id="cancel" type="button" routerLink="/home" class="btn btn-danger">Cancel</button>
+    </form>
+</div>

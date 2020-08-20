@@ -1,0 +1,23 @@
+.main{
+    position: fixed;
+    left: 315px;
+    top: 150px;
+    width: 79%;
+    background-color: rgb(222, 224, 224);
+    max-width: 100%;
+    height: auto;
+}
+.content{
+    color: black; 
+    text-align: left;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+.subcontent{
+    color: black; 
+    text-align: left;
+    position: absolute;
+    top: 90px;
+    left: 50px;
+}

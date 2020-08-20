@@ -1,0 +1,56 @@
+<div id="container1" class="p-3 mb-2 bg-warning text-white">
+    <h3>Bus</h3>
+</div>
+<div id="container2" class="p-3 mb-2 bg-primary text-white">
+    <div class="formContainer">
+    <form id="feedback" [formGroup]="myFeedbackForm">
+        <div>
+        <label >Enter PNR Number </label> 
+        <input type="text" class="form-control" [(ngModel)]="feedback.PNR" formControlName="pnr">
+        <p *ngIf="pnr.touched && pnr.invalid">
+            <span class="alert alert-danger" *ngIf="pnr.errors.required">Admin ID is required!</span>
+        </p>
+        </div>
+        <br/>
+        <label for="rating">Journey Ratings:</label><br>
+        <label>How was your Journey Experience with our Bus?</label>
+            <div>
+              <input type="number" id="one" type="radio" value="1" name="rating" [(ngModel)]="feedback.JourneyRatings" formControlName="rating" (change)="changeRating($event)">
+              <label for="one">1</label>
+           </div>
+  
+           <div>
+            <input type="number" id="two" type="radio" value="2" name="rating" [(ngModel)]="feedback.JourneyRatings" formControlName="rating" (change)="changeRating($event)">
+            <label for="two">2</label>
+           </div>
+
+         <div>
+            <input type="number" id="three" type="radio" value="3" name="rating" [(ngModel)]="feedback.JourneyRatings" formControlName="rating" (change)="changeRating($event)">
+            <label for="three">3</label>
+         </div>
+
+         <div>
+            <input type="number" id="four" type="radio" value="4" name="rating" [(ngModel)]="feedback.JourneyRatings" formControlName="rating" (change)="changeRating($event)">
+            <label for="four">4</label>
+         </div>
+
+         <div>
+            <input type="number" id="five" type="radio" value="5" name="rating" [(ngModel)]="feedback.JourneyRatings" formControlName="rating" (change)="changeRating($event)">
+            <label for="five">5</label>
+         </div>
+              
+            <div *ngIf="f.rating.touched && f.rating.invalid" class="alert alert-danger">
+                <div *ngIf="f.rating.errors.required">Rating is required.</div>
+            </div>
+        <br/>
+        <div>
+            <label>Comments </label> 
+            <textarea rows="6" cols="80" name="comment" class="form-control" placeholder="Enter the comments here..." [(ngModel)]="feedback.Comments" form="feedback" formControlName="comment"></textarea>
+            <p *ngIf="comment.touched && comment.invalid">
+                <span class="alert alert-danger" *ngIf="comment.errors.required">Comment is required!</span>
+            </p>
+        </div>
+        <br/>
+        <button id="submit" type="sumbit" (click)="Submit()" class="btn btn-success">Submit Feedback</button> 
+    </form>
+</div>

@@ -1,0 +1,62 @@
+<div class="maincontainer">
+<div id="container1" class="p-3 mb-2 bg-warning text-white">
+    <h3>Bus</h3>
+</div>
+<div id="container2" class="p-3 mb-2 bg-primary text-white">
+    <div class="formContainer">
+    <form [formGroup]="myBusForm">
+        <div>
+        <label >Bus Number </label> 
+        <input type="text" class="form-control" [(ngModel)]="bus.busNumber" formControlName="busnumber">
+        <p *ngIf="busnumber.touched && busnumber.invalid">
+            <span class="alert alert-danger" *ngIf="busnumber.errors.required">Admin ID is required!</span>
+            <span class="alert alert-danger" *ngIf="busnumber.errors.minlength">Minimum length error</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>Driver ID </label> 
+        <input type="number" class="form-control" [(ngModel)]="bus.driverID" formControlName="driverid">
+        <p *ngIf="driverid.touched && driverid.invalid">
+            <span class="alert alert-danger" *ngIf="driverid.errors.required">Driver Id is required!</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+            <label>Driver Phone Number </label> 
+            <input type="text" class="form-control" [(ngModel)]="bus.driverPhone" formControlName="driverphone">
+            <p *ngIf="driverphone.touched && driverphone.invalid">
+                <span class="alert alert-danger" *ngIf="driverphone.errors.required">Driver Phone Number is required!</span>
+            </p>
+            </div>
+        <br/>
+        <div>
+            <label>Bus Type </label> 
+            <input type="text" class="form-control" [(ngModel)]="bus.busType" formControlName="bustype">
+            <p *ngIf="bustype.touched && bustype.invalid">
+                <span class="alert alert-danger" *ngIf="bustype.errors.required">Bus Type field is required!</span>
+            </p>
+        </div>
+        <br/>
+        <div>
+            <label>Numbe Of Seats </label> 
+            <input type="number" class="form-control" [(ngModel)]="bus.numberOfSeats" formControlName="noofseats">
+            <p *ngIf="noofseats.touched && noofseats.invalid">
+                <span class="alert alert-danger" *ngIf="noofseats.errors.required">Number of Seats field is required!</span>
+            </p>
+        </div>
+        <br/>
+        <div>
+            <label>Bus Availability </label> 
+            <input type="number" class="form-control" [(ngModel)]="bus.busAvailability" formControlName="busavailability">
+            <p *ngIf="busavailability.touched && busavailability.invalid">
+                <span class="alert alert-danger" *ngIf="busavailability.errors.required">Bus Availability field is required!</span>
+            </p>
+        </div>
+        <br/>
+        <button id="submit" type="sumbit" (click)="Register()" class="btn btn-success">Register Bus</button>
+        <button id="cancel" type="button" routerLink="/home" class="btn btn-danger">Cancel</button> 
+    </form>
+</div>
+</div>
+</div>

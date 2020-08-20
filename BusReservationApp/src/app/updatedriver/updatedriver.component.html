@@ -1,0 +1,76 @@
+<div id="box">
+<button class="btn btn-primary" (click)="fetchDrivers()" style="Position:absolute; left:1000px; top:20px;">Display Drivers</button>
+<div id="container1" class="p-3 mb-2 bg-warning text-white">
+    <h3>Drivers</h3>
+</div>
+<div id="showcontainer" class="p-3 mb-2 bg-primary text-white">
+    <div class="tableContainer">
+        <table class="table">
+            <tbody>
+                <tr *ngIf="displaydriver">
+                    <th>Driver ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone Number</th>
+                </tr>
+                <tr *ngFor = "let d of displaydriver">
+                    <td>{{d.DID}}</td>
+                    <td>{{d.FirstName}}</td>
+                    <td>{{d.LastName}}</td>
+                    <td>{{d.PhoneNumber}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- <div class="modal" id="modalcontainer">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"> -->
+        <div id="container1" class="p-3 mb-2 bg-warning text-white">
+            <h3>Update Driver Details</h3>
+        </div>
+          <div id="container2" class="p-3 mb-2 bg-primary text-white">
+            <div id="formContainer">
+            <form [formGroup]="myDriverForm" (ngSubmit)="editDriver()" #updateForm="ngForm">
+                <div>
+                <label >Driver ID </label> 
+                <input type="number" class="form-control" name="driverID" [(ngModel)]="model.DID" formControlName="driverid">
+                <p *ngIf="driverid.touched && driverid.invalid">
+                    <span class="alert alert-danger" *ngIf="driverid.errors.required">Driver ID is required!</span>
+                </p>
+                </div>
+                <br/>
+                <div>
+                <label >First Name </label> 
+                <input type="text" class="form-control"  name="firsName" [(ngModel)]="model.FirstName" formControlName="firstname">
+                <p *ngIf="firstname.touched && firstname.invalid">
+                    <span class="alert alert-danger" *ngIf="firstname.errors.required">Frist Name is required!</span>
+                </p>
+                </div>
+                <br/>
+                <div>
+                <label>Last Name </label> 
+                <input type="text" class="form-control"  name="lastName" [(ngModel)]="model.LastName" formControlName="lastname">
+                <p *ngIf="lastname.touched && lastname.invalid">
+                    <span class="alert alert-danger" *ngIf="lastname.errors.required">Last Name is required!</span>
+                </p>
+                </div>
+                <br/>
+                <div>
+                <label>Phone Number </label> 
+                <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="model.PhoneNumber" formControlName="phonenumber">
+                <p *ngIf="phonenumber.touched && phonenumber.invalid">
+                    <span class="alert alert-danger" *ngIf="phonenumber.errors.required">Driver Phone Number is required!</span>
+                </p>
+                </div>
+                <br/>
+                <button id="edit" type="submit" class="btn btn-success">Update</button>
+                <button id="cancel" type="button" routerLink="/home" class="btn btn-danger">Cancel</button> 
+            </form>
+            </div>
+        </div>
+    </div>
+    <!-- </div>
+    </div>
+    </div> -->
+    

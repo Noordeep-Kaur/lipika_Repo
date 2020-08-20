@@ -1,0 +1,51 @@
+<div id="box">
+<div class="wrapper">
+<button class="btn btn-success" (click)="fetchCustomerReservation()">Customer's Reservation Details</button>
+</div>
+<div id="container1" class="p-3 mb-2 bg-warning text-white">
+    <h3>Analysis of Customer's Reservation Details</h3>
+</div>
+<div id="container2" class="p-3 mb-2 bg-primary text-white">
+    <div class="tableContainer">
+        <table class="table">
+            <tbody>
+                <tr *ngIf="result">
+                    <th>PNR Number</th>
+                    <th>User ID</th>
+                    <th>Frist Name</th>
+                    <th>Last Name</th>
+                    <th>Bus ID</th>
+                    <th>From Location</th>
+                    <th>To Location</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>From Time</th>
+                    <th>To Time</th>
+                    <th>Ticket Booking Status</th>
+                    <th>Number of Seats Booked By User</th>
+                    <th>Fare Price</th>
+                    <th>Booking Payment Status</th>
+
+                </tr>
+                <tr *ngFor = "let c of result">
+                    <td>{{c.TicketID}}</td>
+                    <td>{{c.UID}}</td>
+                    <td>{{c.FirstName}}</td>
+                    <td>{{c.Lastname}}</td>
+                    <td>{{c.BusID}}</td>
+                    <td>{{c.FromLocation}}</td>
+                    <td>{{c.ToLocation}}</td>
+                    <td>{{c.FromDate | date}}</td>
+                    <td>{{c.ToDate | date}}</td>
+                    <td>{{c.FromTime}}</td>
+                    <td>{{c.ToTime}}</td>
+                    <td>{{c.TicketBookingStatus}}</td>
+                    <td>{{c.NumberOfSeats}}</td>
+                    <td>{{c.Fare}}</td>
+                    <td>{{c.PaymentStatus}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

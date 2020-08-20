@@ -1,0 +1,32 @@
+<div>
+<div id="container1" class="p-3 mb-2 bg-success text-white">
+    <h3>Admin Login</h3>
+</div>
+<div id="container2" class="p-3 mb-2 bg-light text-dark">
+    <div class="formContainer">
+    <form [formGroup]="myLoginForm">
+        <div>
+            <br>
+            <br>
+        <label >Admin Username </label> 
+        <input id= "username" placeholder="Enter Username" type="text" class="form-control" [(ngModel)]="admin.username" formControlName="uname">
+        <p *ngIf="uname.touched && uname.invalid">
+            <span class="alert alert-danger" *ngIf="uname.errors.required">Admin USername is required!</span>
+        </p>
+        </div>
+        <br/>
+        <div>
+        <label>Admin Password </label> 
+        <input id="password" placeholder="Enter Password" type="password" class="form-control" [(ngModel)]="admin.password" formControlName="pass">
+        <p *ngIf="pass.touched && pass.invalid">
+            <span class="alert alert-danger" *ngIf="pass.errors.required">Password is required!</span>
+        </p>
+        </div>
+        <br/>
+        <button id="login" (click)="Login()" class="btn btn-success">Login</button> 
+        <div id="alert" class="p-3 mb-2 bg-warning text-dark" *ngIf = "result">
+            {{result}}
+        </div>
+    </form>
+</div>
+</div>

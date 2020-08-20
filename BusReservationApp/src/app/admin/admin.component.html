@@ -1,0 +1,22 @@
+
+<div class="admin">
+
+    <br>
+    <div class="head"><h2> DhanKosh </h2>
+        <img src="assets/img/Logo.png" height="50px" width="80px"> <br>
+        <br>
+    </div>
+    <br>
+    <button class="button" style="vertical-align:middle" [routerLink]="['/home']" ><span>Home</span></button> <br>
+    <button class="button" style="vertical-align:middle" [routerLink]="['/addbus']"> <span>Add Bus</span> </button> <br>
+    <button class="button" style="vertical-align:middle" [routerLink]="['/activateuser']"> <span>Add Driver</span> </button> <br>
+    <button class="button" style="vertical-align:middle" [routerLink]="['/product']"> <span>Products</span> </button> <br>
+    <button class="button" style="vertical-align:middle" onclick="location.href='#'"> <span>Logout</span> </button> <br>
+    <br>
+</div>
+<div class="top">
+    <p>Admin Portal</p>
+</div>
+
+<router-outlet> </router-outlet>
+

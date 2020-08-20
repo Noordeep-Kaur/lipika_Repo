@@ -1,0 +1,11 @@
+.container{
+    width: 100%;
+    background-color: powderblue;
+}
+.logoImage{
+    width: 150px;
+    height: 70px;
+    border: solid;
+    border-color: blue;
+    border-width: thick
+}

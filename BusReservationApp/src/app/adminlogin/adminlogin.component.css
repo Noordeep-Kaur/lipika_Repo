@@ -1,0 +1,30 @@
+#container1{
+    width: 600px;
+    height: 70px;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+#container2{
+    width: 600px;
+    height: 520px;
+    color: black;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+#box{
+    margin: auto;
+    height: 70px;
+}
+#login{
+    margin-left: 240px;
+    margin-top: 50px;
+    position: relative;
+}
+#alert{
+    margin-top: 20px;
+    text-Align: center;
+}
